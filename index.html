@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will You Be My Valentine? ❤️</title>
+
+<style>
+  body {
+    font-family: Poppins, Arial, sans-serif;
+    background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+    text-align: center;
+    padding-top: 60px;
+    overflow: hidden;
+  }
+  h1 { color: #b3003b; font-size: 40px; }
+  img { width: 220px; transition: transform 0.3s; }
+
+  .buttons { position: relative; height: 140px; margin-top: 30px; }
+
+  button {
+    font-size: 22px;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  #yes { background: #ff4d6d; color: white; left: 40%; }
+  #no  { background: #444; color: white; left: 58%; }
+</style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💘</h1>
+
+<img id="gif"
+ src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif">
+
+<div class="buttons">
+  <button id="yes" onclick="yes()">Yes 💖</button>
+  <button id="no" onmouseover="moveNo()" onclick="moveNo()">No 😢</button>
+</div>
+
+<script>
+let scale = 1;
+
+function moveNo() {
+  const x = Math.random()*240 - 120;
+  const y = Math.random()*120 - 60;
+
+  document.getElementById("no").style.transform =
+    `translate(${x}px, ${y}px)`;
+
+  scale += 0.12;
+  document.getElementById("yes").style.transform = `scale(${scale})`;
+  document.getElementById("gif").style.transform = `scale(${scale})`;
+}
+
+function yes() {
+  document.body.innerHTML = `
+    <h1>YAYYYY!! 💕</h1>
+    <h2>You are my Valentine greeshu 😍</h2>
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" width="300">
+  `;
+}
+</script>
+
+</body>
+</html>
